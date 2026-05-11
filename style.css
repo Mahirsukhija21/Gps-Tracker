@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f1a;
+  color: white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Top bar ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #1a1a2e;
+  border-bottom: 1px solid #2a2a4a;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1D9E75;
+}
+
+.status {
+  font-size: 12px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Stats row ── */
+.stats {
+  display: flex;
+  gap: 1px;
+  background: #2a2a4a;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.stat-card {
+  flex: 1;
+  background: #1a1a2e;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.value {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1D9E75;
+}
+
+/* ── Map ── */
+#map {
+  flex: 1;
+  width: 100%;
+  background: #0f0f1a;
+}
+
+/* ── Bottom controls ── */
+.controls {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #1a1a2e;
+  border-top: 1px solid #2a2a4a;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#startBtn {
+  background: #1D9E75;
+  color: white;
+}
+
+#startBtn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+#stopBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+#stopBtn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+#historyBtn {
+  background: #2a2a4a;
+  color: #aaa;
+  flex: 0.5;
+}
+
+#historyBtn:hover {
+  background: #333360;
+  color: white;
+}
+
+/* ── History panel ── */
+.history-panel {
+  display: none;
+  position: absolute;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  max-height: 60%;
+  background: #1a1a2e;
+  border-top: 2px solid #1D9E75;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.history-panel.open {
+  display: block;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1D9E75;
+  border-bottom: 1px solid #2a2a4a;
+  position: sticky;
+  top: 0;
+  background: #1a1a2e;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+  padding: 0 4px;
+  flex: none;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+.trip-item {
+  padding: 14px 16px;
+  border-bottom: 1px solid #2a2a4a;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.trip-item:hover {
+  background: #222240;
+}
+
+.trip-date {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.trip-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.trip-stats span {
+  color: #1D9E75;
+  font-weight: 600;
+}
+
+.no-trips {
+  padding: 32px;
+  text-align: center;
+  color: #444;
+  font-size: 14px;
+}
+
+.delete-btn {
+  float: right;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  flex: none;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}

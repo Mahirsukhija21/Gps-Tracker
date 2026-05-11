@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPS Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css"/>
+<!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <meta name="theme-color" content="#1D9E75"/>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <span class="logo">GPS Tracker</span>
+      <span class="status" id="status">Waiting for GPS...</span>
+    </header>
+
+    <div class="stats">
+      <div class="stat-card">
+        <span class="label">Speed</span>
+        <span class="value" id="speed">0 km/h</span>
+      </div>
+      <div class="stat-card">
+        <span class="label">Distance</span>
+        <span class="value" id="distance">0.00 km</span>
+      </div>
+      <div class="stat-card">
+        <span class="label">Duration</span>
+        <span class="value" id="duration">00:00</span>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="history-panel" id="historyPanel">
+      <div class="history-header">
+        <span>Trip History</span>
+        <button class="close-btn" id="closeHistory">✕</button>
+      </div>
+      <div id="tripList"></div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start Trip</button>
+      <button id="stopBtn" disabled>Stop Trip</button>
+      <button id="historyBtn">History</button>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
