@@ -4,6 +4,17 @@ A modern real-time GPS tracking web application with live location monitoring, s
 
 ---
 
+## 📥 Download Android App
+
+> **Download the latest APK and install it directly on your Android device.**
+
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/Mahirsukhija21/Gps-Tracker/raw/main/releases/app-debug.apk)
+
+> ⚠️ **Note:** Allow **"Install from unknown sources"** in your Android settings before installing.
+> Settings → Security → Enable **Unknown Sources**
+
+---
+
 ## ✨ Features
 
 * 📡 Real-Time GPS Tracking
@@ -97,6 +108,9 @@ Gps-Tracker/
 ├── public/
 │
 ├── src/
+│
+├── releases/
+│   └── app-debug.apk       ← Android APK
 │
 ├── package.json
 ├── server.js
